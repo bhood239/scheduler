@@ -38,7 +38,9 @@ it.skip("renders a clickable button", () => {
 
   const button = getByText("Clickable");
 
-  fireEvent.click(button);
+  act(() => {
+    fireEvent.click(button);
+  });
 
   expect(handleClick).toHaveBeenCalledTimes(1);
 });
@@ -53,7 +55,9 @@ it.skip("renders a disabled button", () => {
 
   const button = getByText("Disabled");
 
-  fireEvent.click(button);
+  act(() => {
+    fireEvent.click(button);
+  });
 
   expect(handleClick).toHaveBeenCalledTimes(0);
 });
